@@ -1,0 +1,10 @@
+.users-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 650px;
+    padding: 10px;
+    justify-content: space-between;
+    row-gap: 10px;
+    border-right: 1px solid black;
+}

@@ -1,0 +1,7 @@
+.user-block {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    padding: 10px;
+}
