@@ -1,0 +1,8 @@
+.post-block {
+    display: flex;
+    flex-direction: column;
+    background-color: #bdbdbd;
+    border-radius: 5px;
+    width: 204px;
+    padding: 10px;
+}

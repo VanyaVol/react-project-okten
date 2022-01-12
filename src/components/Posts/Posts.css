@@ -1,0 +1,8 @@
+.posts-block {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 10px;
+    width: 650px;
+    padding: 10px;
+}

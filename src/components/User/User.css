@@ -1,0 +1,8 @@
+.user-block {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    background-color: #bdbdbd;
+    border-radius: 5px;
+    padding: 10px;
+}
