@@ -1,0 +1,7 @@
+.launches-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+}
+
