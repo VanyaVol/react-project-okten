@@ -15,13 +15,9 @@ function Users() {
     }, []);
 
 
-    return (
-        <div className={'users-block'}>
-            {
-                users.map(itemUser => <User key={itemUser.id} itemUser={itemUser}/>)
-            }
-        </div>
-    );
+    return (<div className={'users-block'}>
+        {users.map(itemUser => <User key={itemUser.id} itemUser={itemUser}/>)}
+    </div>);
 }
 
 export default Users;

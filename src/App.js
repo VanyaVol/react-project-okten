@@ -8,19 +8,17 @@ import Comments from "./components/Comments/Comments";
 function App() {
 
 
-    return (
-        <div className="App">
+    return (<div className="App">
 
-            <div className={'top-block'}>
-                <Users/>
-                <Posts/>
-            </div>
-
-            <Comments/>
-
-
+        <div className={'top-block'}>
+            <Users/>
+            <Posts/>
         </div>
-    );
+
+        <Comments/>
+
+
+    </div>);
 }
 
 export default App;

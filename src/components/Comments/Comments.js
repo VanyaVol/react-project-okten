@@ -12,15 +12,11 @@ function Comments() {
         getComments().then(arrComments => setComments(arrComments));
     }, [])
 
-    return (
-        <div className={'comments-block'}>
+    return (<div className={'comments-block'}>
 
-            {
-                comments.map(itemComment => <Comment key={itemComment.id} itemComment={itemComment}/>)
-            }
+        {comments.map(itemComment => <Comment key={itemComment.id} itemComment={itemComment}/>)}
 
-        </div>
-    );
+    </div>);
 }
 
 export default Comments;

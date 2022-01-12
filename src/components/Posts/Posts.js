@@ -15,15 +15,11 @@ function Posts() {
     }, []);
 
 
-    return (
-        <div className={'posts-block'}>
+    return (<div className={'posts-block'}>
 
-            {
-                posts.map(itemPost => <Post key={itemPost.id} itemPost={itemPost}/>)
-            }
+        {posts.map(itemPost => <Post key={itemPost.id} itemPost={itemPost}/>)}
 
-        </div>
-    );
+    </div>);
 }
 
 export default Posts;
