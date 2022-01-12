@@ -6,13 +6,14 @@ import Post from "../Post/Post";
 
 function Posts() {
 
+    let [posts, setPosts] = useState([]);
+
     useEffect(() => {
 
         getPosts().then(arrPosts => setPosts(arrPosts))
 
     }, []);
 
-    let [posts, setPosts] = useState([]);
 
     return (
         <div className={'posts-block'}>

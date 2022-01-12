@@ -6,11 +6,11 @@ import Comment from "../Comment/Comment";
 
 function Comments() {
 
+    let [comments, setComments] = useState([]);
+
     useEffect(() => {
         getComments().then(arrComments => setComments(arrComments));
     }, [])
-
-    let [comments, setComments] = useState([]);
 
     return (
         <div className={'comments-block'}>

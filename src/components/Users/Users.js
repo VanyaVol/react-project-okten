@@ -6,13 +6,14 @@ import User from "../User/User";
 
 function Users() {
 
+    let [users, setUsers] = useState([]);
+
     useEffect(() => {
 
         getUsers().then(arrUsers => setUsers(arrUsers));
 
     }, []);
 
-    let [users, setUsers] = useState([]);
 
     return (
         <div className={'users-block'}>
