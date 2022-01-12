@@ -6,11 +6,13 @@ import Launch from "../Launch/Launch";
 
 function Launches() {
 
+    let [launches, setLaunches] = useState([]);
+
     useEffect(() => {
         getLaunches().then(arrLaunches => setLaunches(arrLaunches.filter(value => value.launch_year !== '2020')));
     }, []);
 
-    let [launches, setLaunches] = useState([]);
+
 
     return (
         <div className={'launches-block'}>
