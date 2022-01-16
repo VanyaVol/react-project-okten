@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.users_block {
+    display: flex;
+    column-gap: 30px;
+}
+
+.btn {
+    margin-top: 10px;
+    height: 30px;
+    width: 150px;
+}

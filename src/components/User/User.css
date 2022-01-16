@@ -1,0 +1,13 @@
+.users_block__left__user {
+    width: 300px;
+    background-color: #dadada;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: -2px 3px 5px gray;
+}
+
+.users_block__left__user > h4 {
+    font-size: 20px;
+    font-weight: lighter;
+}
+

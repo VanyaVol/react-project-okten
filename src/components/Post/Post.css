@@ -1,0 +1,7 @@
+.posts__post {
+    width: 280px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dadada;
+    box-shadow: 2px 3px 5px gray;
+}

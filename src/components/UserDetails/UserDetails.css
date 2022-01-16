@@ -1,0 +1,17 @@
+.users_block__right {
+    width: 500px;
+    background-color: #dadada;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px gray;
+}
+
+.user_details__company {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.user_details__address {
+    margin-top: 5px;
+    margin-left: 20px;
+}
