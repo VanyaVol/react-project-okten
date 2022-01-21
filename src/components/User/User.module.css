@@ -1,0 +1,11 @@
+.userBlock {
+    width: 300px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
+.text {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+

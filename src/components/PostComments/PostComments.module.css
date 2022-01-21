@@ -1,0 +1,13 @@
+.commentBlock {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+
+}
+
+.commentBlock > * {
+    padding-bottom: 5px;
+}
+
+.text {
+    text-transform: uppercase;
+}

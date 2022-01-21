@@ -1,15 +1,41 @@
-import React from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation, useParams, Outlet} from "react-router-dom";
+
+import appStyle from "../../App.module.css";
+import css from './PostDetailsPage.module.css';
+import {postsService} from "../../services/posts.service";
 
 const PostsDetailsPage = () => {
-    const {id} = useParams();
-    const {state: post} = useLocation();
+    const [post, setPost] = useState(null);
 
-    return (
-        <div>
+    const {id: idParam} = useParams();
+    const {state: newPost} = useLocation();
 
-        </div>
-    );
+    const {userId, id, title, body} = {...post};
+
+    useEffect(() => {
+        if (newPost) {
+            setPost(newPost);
+            return
+        }
+
+        postsService.getById(idParam).then(post => setPost(post));
+
+    }, [idParam]);
+
+
+    return (<div>
+        {post && (<div className={css.details}>
+            <h4>User ID: {userId}</h4>
+            <h4>ID: {id}</h4>
+            <h3 className={css.text}>{title}</h3>
+            <p>{body}</p>
+            <Link to={'comments'}>
+                <button className={appStyle.button}>Get comments</button>
+            </Link>
+        </div>)}
+        <Outlet/>
+    </div>);
 };
 
 export {PostsDetailsPage};

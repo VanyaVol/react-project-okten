@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+.button {
+    margin-top: 10px;
+    height: 25px;
+    width: 150px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.block {
+    margin-top: 10px;
+    background: black;
+    height: 100%;
+}
+
+.wrap {
+    display: flex;
+    margin: 0 auto;
+    width: 1250px;
+    column-gap: 100px;
+    background: black no-repeat;
+    background-size: 120%;
+
+}

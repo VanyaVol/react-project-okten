@@ -1,15 +1,13 @@
 import React from 'react';
-import {Header} from "../Header/Header";
 import {Outlet} from "react-router-dom";
 
+import {Header} from "../Header/Header";
 
 const Layout = () => {
-    return (
-        <div>
-            <Header/>
-            <Outlet/>
-        </div>
-    );
+    return (<>
+        <Header/>
+        <Outlet/>
+    </>);
 };
 
 export {Layout};

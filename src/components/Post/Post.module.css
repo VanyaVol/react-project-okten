@@ -1,0 +1,10 @@
+.post {
+    width: 500px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.text {
+    text-transform: uppercase;
+    font-weight: 200;
+}

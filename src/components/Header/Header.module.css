@@ -1,19 +1,31 @@
 .header {
     display: flex;
-    gap: 40px;
     justify-content: center;
     align-items: center;
     width: 100%;
     background-color: black;
     height: 45px;
+    border-bottom: 1px solid white;
 }
 
-.header a {
+.navigator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+}
+
+.navigator a {
     text-transform: uppercase;
     color: white;
     font-size: 20px;
+    width: 150px;
 }
 
-.header a[class='active'] {
-    color: red;
+.navigator a[class='active'] {
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
 }
+

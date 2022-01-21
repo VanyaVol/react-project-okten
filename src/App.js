@@ -1,14 +1,11 @@
-import './App.css';
 import {Routes, Route, Navigate} from "react-router-dom";
-
 import React from 'react';
+
+import './App.module.css';
 import {Layout} from "./components/Layout/Layout";
-import {UsersPage} from "./pages/UsersPage/UsersPage";
-import {PostsPage} from "./pages/PostsPage/PostsPage";
-import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
-import {UserDetailsPage} from "./pages/UserDetailsPage/UserDetailsPage";
-import {UserPostPage} from "./pages/UserPostPage/UserPostPage";
-import {PostsDetailsPage} from "./pages/PostDetailsPage/PostsDetailsPage";
+import {
+    UsersPage, PostsPage, NotFoundPage, UserDetailsPage, UserPostPage, PostsDetailsPage, CommentsPage
+} from "./pages/";
 
 const App = () => {
     return (<>
@@ -21,10 +18,12 @@ const App = () => {
                         </Route>
                     </Route>
                     <Route path={'posts'} element={<PostsPage/>}>
-                        <Route path={':id'} element={<PostsDetailsPage/>}/>
+                        <Route path={':id'} element={<PostsDetailsPage/>}>
+                            <Route path={'comments'} element={<CommentsPage/>}/>
+                        </Route>
                     </Route>
+                    <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
-                <Route path={'*'} element={<NotFoundPage/>}/>
             </Routes>
 
         </>

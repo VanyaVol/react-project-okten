@@ -1,0 +1,22 @@
+.details > *{
+    padding-bottom: 5px;
+}
+
+.details {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.company > * {
+    padding-bottom: 2px;
+}
+
+.company {
+    padding-top: 5px;
+    border-top: 1px solid white;
+    width: 300px;
+}
+
+.text {
+    text-transform: uppercase;
+}

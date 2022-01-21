@@ -1,11 +1,13 @@
 import React from 'react';
 
+import css from './NotFoundPage.module.css';
+
 const NotFoundPage = () => {
-    return (
-        <div style={{backgroundColor: 'red', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <h1>Not Found Page</h1>
+    return (<div className={css.notFound}>
+        <div className={css.circle}>
+            <p className={css.text}>Not found page</p>
         </div>
-    );
+    </div>);
 };
 
 export {NotFoundPage};

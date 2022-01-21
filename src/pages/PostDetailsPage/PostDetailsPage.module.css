@@ -1,0 +1,12 @@
+.details {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.details > * {
+    padding-bottom: 3px;
+}
+
+.text {
+    text-transform: uppercase;
+}

@@ -1,0 +1,12 @@
+.post {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.post > * {
+    padding-bottom: 5px;
+}
+
+.text {
+    text-transform: uppercase;
+}
