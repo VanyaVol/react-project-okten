@@ -6,6 +6,7 @@ import {Layout} from "./components/Layout/Layout";
 import {
     UsersPage, PostsPage, NotFoundPage, UserDetailsPage, UserPostPage, PostsDetailsPage, CommentsPage
 } from "./pages/";
+import {AlbumsPage} from "./pages/AlbumsPage/AlbumsPage";
 
 const App = () => {
     return (<>
@@ -16,7 +17,11 @@ const App = () => {
                         <Route path={':id'} element={<UserDetailsPage/>}>
                             <Route path={'posts'} element={<UserPostPage/>}/>
                         </Route>
+                        <Route path={':albumId/albums'} element={<AlbumsPage/>}>
+
+                        </Route>
                     </Route>
+
                     <Route path={'posts'} element={<PostsPage/>}>
                         <Route path={':id'} element={<PostsDetailsPage/>}>
                             <Route path={'comments'} element={<CommentsPage/>}/>

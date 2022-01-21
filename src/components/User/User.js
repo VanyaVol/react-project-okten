@@ -8,9 +8,14 @@ const User = ({user}) => {
     const {id, name} = user;
     return (<div className={css.userBlock}>
         <h4 className={css.text}>{id}. {name}</h4>
-        <Link to={`${id}`} state={user}>
-            <button className={appStyle.button}>Get user details</button>
-        </Link>
+        <div className={css.buttonBlock}>
+            <Link to={`${id}`} state={user}>
+                <button className={appStyle.button}>Get user details</button>
+            </Link>
+            <Link to={`${id}/albums`} state={user}>
+                <button className={appStyle.button}>Get album user</button>
+            </Link>
+        </div>
     </div>);
 };
 
