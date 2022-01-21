@@ -41,9 +41,6 @@ function App() {
 
             <Form getFilter={getFilter} users={users}/>
             <Users users={filteredUsers}/>
-            <div>
-                ivan
-            </div>
 
         </div>
     );
