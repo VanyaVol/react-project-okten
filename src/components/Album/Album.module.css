@@ -1,0 +1,14 @@
+.albumBlock {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.albumBlock > * {
+    padding-bottom: 3px;
+    font-weight: lighter;
+}
+
+.text {
+    text-transform: uppercase;
+    font-weight: bold;
+}

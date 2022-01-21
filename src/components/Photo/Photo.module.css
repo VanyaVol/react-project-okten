@@ -1,0 +1,16 @@
+.photoBlock {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff;
+}
+
+.photoText > * {
+    font-weight: lighter;
+    padding-bottom: 3px;
+}
+
+.text {
+    font-weight: bold;
+    text-transform: uppercase;
+}

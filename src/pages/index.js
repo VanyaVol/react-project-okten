@@ -1,5 +1,7 @@
+export * from './AlbumsPage/AlbumsPage';
 export * from './CommentsPage/CommentsPage';
 export * from './NotFoundPage/NotFoundPage';
+export * from './PhotosPage/PhotosPage';
 export * from './PostDetailsPage/PostsDetailsPage';
 export * from './PostsPage/PostsPage'
 export * from './UserDetailsPage/UserDetailsPage';

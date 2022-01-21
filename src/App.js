@@ -4,9 +4,17 @@ import React from 'react';
 import './App.module.css';
 import {Layout} from "./components/Layout/Layout";
 import {
-    UsersPage, PostsPage, NotFoundPage, UserDetailsPage, UserPostPage, PostsDetailsPage, CommentsPage
+    AlbumsPage,
+    UsersPage,
+    PostsPage,
+    NotFoundPage,
+    PhotosPage,
+    UserDetailsPage,
+    UserPostPage,
+    PostsDetailsPage,
+    CommentsPage
 } from "./pages/";
-import {AlbumsPage} from "./pages/AlbumsPage/AlbumsPage";
+
 
 const App = () => {
     return (<>
@@ -17,8 +25,8 @@ const App = () => {
                         <Route path={':id'} element={<UserDetailsPage/>}>
                             <Route path={'posts'} element={<UserPostPage/>}/>
                         </Route>
-                        <Route path={':albumId/albums'} element={<AlbumsPage/>}>
-
+                        <Route path={':userId/albums'} element={<AlbumsPage/>}>
+                            <Route path={':albumId/photos'} element={<PhotosPage/>}/>
                         </Route>
                     </Route>
 
