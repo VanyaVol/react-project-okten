@@ -1,0 +1,33 @@
+.form {
+    width: fit-content;
+    background-color: #e7e7e7;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.formCar {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label > * {
+    margin: 10px;
+
+}
+
+.button {
+    height: 25px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.error {
+    margin: 5px;
+    padding: 5px;
+    background-color: red;
+}

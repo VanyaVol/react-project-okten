@@ -1,0 +1,14 @@
+.car {
+    height: 150px;
+    width: 200px;
+    border: 1px solid silver;
+}
+
+.car > * {
+    margin: 5px;
+}
+
+.btn {
+    height: 30px;
+    width: 80px;
+}

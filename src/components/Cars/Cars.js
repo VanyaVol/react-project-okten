@@ -4,18 +4,16 @@ import css from './Cars.module.css';
 import {carsServices} from "../../services/cars.services";
 import {Car} from "../Car/Car";
 
-const Cars = ({newCar, newCarState}) => {
+const Cars = ({update, deleteCar, updateCar}) => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
         carsServices.getAll().then(arrCars => setCars(arrCars));
-    }, [newCarState]);
+    }, [update]);
 
-    return (
-        <div className={css.carsBlock}>
-            {cars.map(itemCar => <Car key={itemCar.id} car={itemCar}/>)}
-        </div>
-    );
+    return (<div className={css.carsBlock}>
+        {cars.map(itemCar => <Car key={itemCar.id} car={itemCar} deleteCar={deleteCar} updateCar={updateCar}/>)}
+    </div>);
 };
 
 export {Cars};
