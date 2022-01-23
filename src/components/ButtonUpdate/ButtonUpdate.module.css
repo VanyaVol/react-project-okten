@@ -1,0 +1,12 @@
+.btnUpdate {
+    height: 30px;
+    width: 300px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btnUpdate:hover {
+    transition: 0.2s;
+    background-color: silver;
+}

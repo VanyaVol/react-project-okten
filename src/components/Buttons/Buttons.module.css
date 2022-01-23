@@ -1,0 +1,21 @@
+.buttonsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.button {
+    height: 30px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.button:hover {
+    transition: 0.3s;
+    background-color: silver;
+}
