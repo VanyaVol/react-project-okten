@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import css from'./App.module.css';
+import css from './App.module.css';
 import {axiosServices} from "./services/axios.services";
 import {Image} from "./components/Image/Image";
 import {Buttons} from "./components/Buttons/Buttons";
@@ -10,20 +10,17 @@ function App() {
     const [trigger, setTrigger] = useState(null);
     const [imgSrc, setImgSrc] = useState(null);
 
-    const newImage = () => {
-        setTrigger({});
-    }
-
     useEffect(() => {
         axiosServices.get('', {params: {tag: update}}).then(value => setImgSrc(value.request.responseURL));
     }, [trigger]);
 
+    const newImage = () => {
+        setTrigger({});
+    }
+
     return (<div className={css.image}>
-
         <Image imgSrc={imgSrc} newImage={newImage}/>
-
         <Buttons setUpdate={setUpdate} newImage={newImage}/>
-
     </div>);
 }
 
