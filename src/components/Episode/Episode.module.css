@@ -1,0 +1,9 @@
+.episodeBlock {
+    width: 280px;
+    padding: 5px;
+    background-color: #eaeaea;
+}
+
+.episodeBlock > * {
+    margin: 5px;
+}

@@ -1,8 +1,10 @@
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 
-import './App.css';
+import './App.module.css';
 import {Layout} from "./components/Layout/Layout";
 import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
+import {EpisodesPage} from "./pages/EpisodesPage/EpisodesPage";
+import {CharactersPage} from "./pages/CharactersPage/CharactersPage";
 
 
 function App() {
@@ -12,6 +14,10 @@ function App() {
 
             <Routes>
                 <Route path={''} element={<Layout/>}>
+                    <Route index element={<Navigate to={'episodes'}/>}/>
+                    <Route path={'episodes'} element={<EpisodesPage/>}>
+                        <Route path={':id/character'} element={<CharactersPage/>}/>
+                    </Route>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>

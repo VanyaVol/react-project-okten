@@ -5,6 +5,11 @@
     background-color: #247ff1;
 }
 
+.headerWrap {
+    margin: 0 auto;
+    width: 1350px;
+}
+
 .text {
     margin-left: 20px;
     color: white;
