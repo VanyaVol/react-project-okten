@@ -1,3 +1,6 @@
+import {Router, Route} from "react-router-dom";
+
+
 import './App.css';
 
 function App() {
@@ -5,7 +8,9 @@ function App() {
     return (
         <div className="App">
 
-            Bonus_3_Created
+            <Router>
+                <Route/>
+            </Router>
             
         </div>
     );
