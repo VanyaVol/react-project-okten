@@ -4,5 +4,5 @@ import {urls} from "../configs/urls";
 
 export const characterServices = {
     getAll: () => axiosServices.get(urls.episode).then(value => value.data),
-    getByPage: (page)=> axiosServices.get(`${urls.character}`,{params: {page: page}}).then(value => value.data)
+    getById: (id)=> axiosServices.get(`${urls.character}/${id}`).then(value => value.data)
 }

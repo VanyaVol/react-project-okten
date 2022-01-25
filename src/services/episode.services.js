@@ -3,5 +3,6 @@ import {urls} from "../configs/urls";
 
 
 export const episodeServices = {
-    getAll: () => axiosServices.get(urls.episode).then(value => value.data)
+    getAll: () => axiosServices.get(urls.episode).then(value => value.data),
+    getById: (id) => axiosServices.get(`${urls.episode}/${id}`).then(value => value.data)
 }

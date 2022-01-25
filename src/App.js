@@ -15,9 +15,8 @@ function App() {
             <Routes>
                 <Route path={''} element={<Layout/>}>
                     <Route index element={<Navigate to={'episodes'}/>}/>
-                    <Route path={'episodes'} element={<EpisodesPage/>}>
-                        <Route path={':id/character'} element={<CharactersPage/>}/>
-                    </Route>
+                    <Route path={'episodes'} element={<EpisodesPage/>}/>
+                    <Route path={'episodes/:id/character'} element={<CharactersPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>

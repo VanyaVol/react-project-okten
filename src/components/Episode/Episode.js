@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 
 const Episode = ({episode}) => {
     const {id, name, air_date, episode: episodeName, characters} = episode;
-    console.log(episode);
     return (
         <div className={css.episodeBlock}>
             <h2>{name}</h2>
