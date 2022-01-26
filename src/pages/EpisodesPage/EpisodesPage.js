@@ -18,9 +18,9 @@ const EpisodesPage = () => {
         episodeServices.getByPage(page).then(value => {
             setEpisodes(value.results);
             setInfo(value.info);
-        })
+        });
 
-    }, [trigger]);
+    }, [trigger, ]);
 
     const btnNext = () => {
         page = info.next.split('=')[1];

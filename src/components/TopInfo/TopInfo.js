@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 
 import css from './TopInfo.module.css';
 import {useLocation, useParams} from "react-router-dom";
-import {characterServices} from "../../services/character.services";
 import {episodeServices} from "../../services/episode.services";
 
 const TopInfo = () => {
