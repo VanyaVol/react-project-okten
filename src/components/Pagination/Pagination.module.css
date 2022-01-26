@@ -1,0 +1,12 @@
+.pages {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    height: 25px;
+    width: 80px;
+    background-color: #fff;
+}
