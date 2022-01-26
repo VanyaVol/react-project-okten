@@ -10,9 +10,9 @@ const CharactersPage = () => {
     const [characterArr, setCharacterArr] = useState([]);
     const [charactersNew, setCharactersNew] = useState([]);
 
-    const {state} = useLocation();
+    const location = useLocation();
 
-    const {episode: {characters}} = state;
+    const {state} = location;
 
     const {id} = useParams();
 
@@ -20,12 +20,13 @@ const CharactersPage = () => {
 
     useEffect(() => {
 
-        if (characters) {
-            characters.map(value => ids.push(value.split('/')[5]));
+        if (state?.characters) {
+            state?.characters.map(value => ids.push(value.split('/')[5]));
         } else {
             episodeServices.getById(id).then(value => {
                 setCharacterArr(value.characters);
             });
+
             characterArr.map(value => ids.push(value.split('/')[5]));
         }
 
