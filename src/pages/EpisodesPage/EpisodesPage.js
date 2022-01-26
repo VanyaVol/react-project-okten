@@ -22,12 +22,12 @@ const EpisodesPage = () => {
 
     }, [trigger]);
 
-    const btnNext = (e) => {
+    const btnNext = () => {
         page = info.next.split('=')[1];
         setTrigger({});
     }
 
-    const btnPrev = (e) => {
+    const btnPrev = () => {
         page = info.prev.split('=')[1];
         setTrigger({});
     }
