@@ -24,8 +24,7 @@ const CharactersPage = () => {
             characters.map(value => ids.push(value.split('/')[5]));
         } else {
             episodeServices.getById(id).then(value => {
-                setCharacterArr(value.characters)
-                console.log(value)
+                setCharacterArr(value.characters);
             });
             characterArr.map(value => ids.push(value.split('/')[5]));
         }
