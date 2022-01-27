@@ -7,7 +7,6 @@ import {useReducer, useState} from "react";
 // }
 
 
-
 function App() {
     // const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
 
@@ -17,6 +16,10 @@ function App() {
         e.preventDefault();
         console.log(e.target.name);
 
+    }
+
+    const change = (e) => {
+        // setForm([e.target.name]:e.target.value);
     }
 
     const addCat = () => {
@@ -29,10 +32,16 @@ function App() {
     return (<div className="App">
 
         <form onSubmit={submit}>
-            <input name={'cat'} type="text"/>
-            <button onClick={()=>{addCat()}}>Add cat...</button>
-            <input name={'dog'} type="text"/>
-            <button onClick={()=>{addDog()}}>Add dog...</button>
+            <input name={'cat'} type="text" onChange={change}/>
+            <button onClick={() => {
+                addCat()
+            }}>Add cat...
+            </button>
+            <input name={'dog'} type="text" onChange={change}/>
+            <button onClick={() => {
+                addDog()
+            }}>Add dog...
+            </button>
         </form>
 
     </div>);
