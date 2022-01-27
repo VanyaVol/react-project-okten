@@ -1,5 +1,8 @@
 import './App.css';
 import {useReducer} from "react";
+import {Counter_1} from "./components/Counter_1/Counter_1";
+import {Counter_2} from "./components/Counter_2/Counter_2";
+import {Counter_3} from "./components/Counter_3/Counter_3";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -39,47 +42,9 @@ function App() {
     const [state, dispatch] = useReducer(reducer, {count_1: 0, count_2: 0, count_3: 0});
 
     return (<div className="App">
-        <p>Counter 1: {state.count_1}</p>
-        <button onClick={() => {
-            dispatch({type: 'increment_1'})
-        }}>Increment
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'decrement_1'})
-        }}>Decrement
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'reset_1'})
-        }}>Reset
-        </button>
-
-        <p>Counter 2: {state.count_2}</p>
-        <button onClick={() => {
-            dispatch({type: 'increment_2'})
-        }}>Increment
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'decrement_2'})
-        }}>Decrement
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'reset_2'})
-        }}>Reset
-        </button>
-
-        <p>Counter 3: {state.count_3}</p>
-        <button onClick={() => {
-            dispatch({type: 'increment_3'})
-        }}>Increment
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'decrement_3'})
-        }}>Decrement
-        </button>
-        <button onClick={() => {
-            dispatch({type: 'reset_3'})
-        }}>Reset
-        </button>
+        <Counter_1 dispatch={dispatch} state={state}/>
+        <Counter_2 dispatch={dispatch} state={state}/>
+        <Counter_3 dispatch={dispatch} state={state}/>
     </div>);
 }
 
