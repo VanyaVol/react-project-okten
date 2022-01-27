@@ -15,7 +15,7 @@ function App() {
 
     const submit = (e) => {
         e.preventDefault();
-
+        console.log(e.target.name);
 
     }
 
