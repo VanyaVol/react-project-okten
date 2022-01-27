@@ -1,33 +1,50 @@
 import './App.css';
-import {useReducer, useState} from "react";
+import {useEffect, useReducer, useState} from "react";
 
-// const reducer = (state, action) => {
-//
-//     return state;
-// }
+const reducer = (state, action) => {
+
+
+    return state;
+}
+
+let arr = [];
 
 
 function App() {
-    // const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
+    const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
 
-    const [form, setForm] = useState({cat: '', dog: 0});
+    // const [trigger, setTrigger] = useState(null);
 
-    const submit = (e) => {
-        e.preventDefault();
-        console.log(e.target.name);
 
-    }
+    // const [form, setForm] = useState({cat: '', dog: ''});
+
+    // const [state, setState] = useState([]);
+
+    // useEffect(() => {
+    // }, [trigger]);
+
+    // const submit = (e) => {
+    //     e.preventDefault();
+    // }
+    //
 
     const change = (e) => {
-        // setForm([e.target.name]:e.target.value);
+        // {...state, [e.target.name]: e.target.value});
     }
 
-    const addCat = () => {
-    }
+    //
+    // const addCat = () => {
+    //     arr.push(form);
+    //     setState(arr);
+    //     setTrigger({})
+    // }
 
-    const addDog = () => {
+    // const addDog = () => {
+    //     arr.push(form);
+    //     setState(arr);
+    //     setTrigger({})
+    // }
 
-    }
 
     return (<div className="App">
 
@@ -43,6 +60,16 @@ function App() {
             }}>Add dog...
             </button>
         </form>
+        <hr/>
+
+        {state.map((item, index) => <div key={index} style={{display: 'flex'}}>
+            <div>
+                {item.cat}
+            </div>
+            <div>
+                {item.dog}
+            </div>
+        </div>)}
 
     </div>);
 }
