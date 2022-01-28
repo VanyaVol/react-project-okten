@@ -1,75 +1,71 @@
 import './App.css';
-import {useEffect, useReducer, useState} from "react";
+import {useEffect, useReducer} from "react";
 
-const reducer = (state, action) => {
+const formReducer = (state, action) => {
+    switch (action.type) {
+        case 'input': {
+            return {...state, [action.name]: action.value}
+        }
 
+        case 'submit': {
+            action.event.preventDefault();
+            break
+        }
 
-    return state;
+        case 'cat': {
+            state.array.push({cat: state.cat, dog: state.dog});
+            break;
+        }
+
+        case 'dog': {
+            state.array.push({cat: state.cat, dog: state.dog});
+            break ;
+        }
+
+    }
+    console.log(state)
+
+    return {...state};
 }
 
-let arr = [];
-
+const initialFormState = {
+    cat: '',
+    dog: '',
+    array: []
+}
 
 function App() {
-    const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
+    const [state, dispatch] = useReducer(formReducer, initialFormState);
 
-    // const [trigger, setTrigger] = useState(null);
+    useEffect(() => {
 
-
-    // const [form, setForm] = useState({cat: '', dog: ''});
-
-    // const [state, setState] = useState([]);
-
-    // useEffect(() => {
-    // }, [trigger]);
-
-    // const submit = (e) => {
-    //     e.preventDefault();
-    // }
-    //
+    }, [])
 
     const change = (e) => {
-        // {...state, [e.target.name]: e.target.value});
+        dispatch({
+            type: 'input', name: e.target.name, value: e.target.value
+        });
     }
-
-    //
-    // const addCat = () => {
-    //     arr.push(form);
-    //     setState(arr);
-    //     setTrigger({})
-    // }
-
-    // const addDog = () => {
-    //     arr.push(form);
-    //     setState(arr);
-    //     setTrigger({})
-    // }
-
 
     return (<div className="App">
 
-        <form onSubmit={submit}>
+        <form onSubmit={(e) => dispatch({type: 'submit', event: e})}>
+
             <input name={'cat'} type="text" onChange={change}/>
             <button onClick={() => {
-                addCat()
+                dispatch({type: 'cat'})
             }}>Add cat...
             </button>
+
             <input name={'dog'} type="text" onChange={change}/>
             <button onClick={() => {
-                addDog()
+                dispatch({type: 'dog'})
             }}>Add dog...
             </button>
+
         </form>
         <hr/>
-
-        {state.map((item, index) => <div key={index} style={{display: 'flex'}}>
-            <div>
-                {item.cat}
-            </div>
-            <div>
-                {item.dog}
-            </div>
-        </div>)}
+        {!!state.array && state.array.map((item, index) => <div key={index}>{item.cat}{item.dog}</div>)}
 
     </div>);
 }
