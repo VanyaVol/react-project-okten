@@ -1,71 +1,50 @@
-import './App.css';
-import {useEffect, useReducer} from "react";
+import {useReducer} from "react";
+
+import css from './App.module.css';
+import {FormCat, FormDog, RenderCatAndDog} from "./components";
 
 const formReducer = (state, action) => {
     switch (action.type) {
-        case 'input': {
-            return {...state, [action.name]: action.value}
-        }
-
         case 'submit': {
-            action.event.preventDefault();
-            break
+            return {...state, array: [...state.array, {id: (new Date().getTime().toString()), ...action.obj}]}
         }
 
-        case 'cat': {
-            state.array.push({cat: state.cat, dog: state.dog});
-            break;
+        case 'deleteCat': {
+            return {...state, array: [...state.array.filter(item => item.id !== action.id)]}
         }
 
-        case 'dog': {
-            state.array.push({cat: state.cat, dog: state.dog});
-            break ;
+        case 'deleteDog': {
+            return {...state, array: [...state.array.filter(item => item.id !== action.id)]}
         }
-
     }
-    console.log(state)
 
-    return {...state};
+    return state;
 }
 
 const initialFormState = {
-    cat: '',
-    dog: '',
-    array: []
+    obj: {}, array: []
 }
 
 function App() {
     const [state, dispatch] = useReducer(formReducer, initialFormState);
 
-    useEffect(() => {
+    const deleteCat = (id) => {
+        dispatch({type: 'deleteCat', id: id})
+    }
 
-    }, [])
-
-    const change = (e) => {
-        dispatch({
-            type: 'input', name: e.target.name, value: e.target.value
-        });
+    const deleteDog = (id) => {
+        dispatch({type: 'deleteDog', id: id})
     }
 
     return (<div className="App">
+        <div className={css.form}>
+            <FormCat dispatch={dispatch}/>
+            <FormDog dispatch={dispatch}/>
+        </div>
 
-        <form onSubmit={(e) => dispatch({type: 'submit', event: e})}>
-
-            <input name={'cat'} type="text" onChange={change}/>
-            <button onClick={() => {
-                dispatch({type: 'cat'})
-            }}>Add cat...
-            </button>
-
-            <input name={'dog'} type="text" onChange={change}/>
-            <button onClick={() => {
-                dispatch({type: 'dog'})
-            }}>Add dog...
-            </button>
-
-        </form>
         <hr/>
-        {!!state.array && state.array.map((item, index) => <div key={index}>{item.cat}{item.dog}</div>)}
+
+        <RenderCatAndDog state={state} deleteCat={deleteCat} deleteDog={deleteDog}/>
 
     </div>);
 }
