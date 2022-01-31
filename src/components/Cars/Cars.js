@@ -8,17 +8,14 @@ const Cars = () => {
     const {cars, status, error} = useSelector(state => state['carReducer']);
     const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getAllCars());
-    },[])
+    }, []);
 
-    console.log(cars);
-    return (
-        <div>
+    return (<div>
             {status === 'pending' && <h1>Loading...</h1>}
             {cars.map(itemCar => <Car key={itemCar.id} car={itemCar}/>)}
-        </div>
-    );
+        </div>);
 }
 
 export {Cars};
