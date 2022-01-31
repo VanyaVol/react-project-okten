@@ -20,11 +20,11 @@ const Form = () => {
 
     const carSubmit = (data) => {
         if (form.model){
-            dispatch(updateCar({data}))
+            dispatch(updateCar({form, data}))
         } else {
             dispatch(createCar({data}));
         }
-        reset();
+        reset()
     }
 
     return (

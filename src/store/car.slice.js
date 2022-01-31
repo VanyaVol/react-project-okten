@@ -35,12 +35,11 @@ export const createCar = createAsyncThunk(
 
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({data}, {dispatch}) => {
+    async ({form, data}, {dispatch}) => {
         try {
-            console.log(data);
-            // const newVar = await carsServices.updateCar(data.id, data);
-            // console.log(newVar);
-            // dispatch(updateCarById(data));
+            console.log(form)
+            const updCar = await carsServices.updateCar(form.id, data);
+            dispatch(updateCarById({updCar}));
         } catch (e) {
             console.log(e.message);
         }
@@ -62,15 +61,14 @@ const carSlice = createSlice({
             state.cars = state.cars.filter(car => car.id !== action.payload.id);
         },
         updateCarById: (state, action) => {
-            state.cars = state.cars.map(car => {
-                if (car.id === action.payload.data.id) {
-                   return car = action.payload.data;
+            state.cars.map((itemCar, index) => {
+                if (itemCar.id === action.payload.updCar.id) {
+                    return state.cars[index] = action.payload.updCar;
                 }
             })
         },
         formSet: (state, action) => {
             state.form = action.payload.car;
-
         }
     },
     extraReducers: {
