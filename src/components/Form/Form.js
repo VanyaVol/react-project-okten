@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
-import {addCar, createCar} from "../../store/car.slice";
+import {addCar, createCar, updateCar} from "../../store/car.slice";
 
 const Form = () => {
     const dispatch = useDispatch();
@@ -19,7 +19,11 @@ const Form = () => {
 
 
     const carSubmit = (data) => {
-        dispatch(createCar({data}));
+        if (form.model){
+            dispatch(updateCar({data}))
+        } else {
+            dispatch(createCar({data}));
+        }
         reset();
     }
 

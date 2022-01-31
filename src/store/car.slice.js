@@ -35,11 +35,9 @@ export const createCar = createAsyncThunk(
 
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({car}, {dispatch}) => {
+    async ({data}, {dispatch}) => {
         try {
-            console.log(car);
-            // const newCar = await carsServices.updateCar(car);
-            // dispatch(addCar({data: newCar}));
+            await carsServices.updateCar(data);
         } catch (e) {
             console.log(e.message);
         }
