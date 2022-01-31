@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {deleteCarById} from "../../store/car.slice";
+import {deleteCarById, formSet, updateCar} from "../../store/car.slice";
 
 const Car = ({car}) => {
     const {id} = car;
@@ -18,7 +18,7 @@ const Car = ({car}) => {
                 {car.price}
             </div>
             <button onClick={()=>{dispatch(deleteCarById({id}))}}>Delete...</button>
-            <button onClick={()=>{}}>Update...</button>
+            <button onClick={()=>{dispatch(formSet({car}))}}>Update...</button>
         </div>
     );
 };

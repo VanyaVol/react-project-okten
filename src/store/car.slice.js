@@ -4,16 +4,16 @@ import {carsServices} from "../services/cars.services";
 export const getAllCars = createAsyncThunk(
     'carSlice/getAllCars',
     async (_, {rejectWithValue}) => {
-    try {
-        return await carsServices.getAll();
-    } catch (e) {
-        return rejectWithValue(e.message);
-    }
-});
+        try {
+            return await carsServices.getAll();
+        } catch (e) {
+            return rejectWithValue(e.message);
+        }
+    });
 
 export const deleteCarById = createAsyncThunk(
     'carSlice/deleteCarById',
-    async ({id}, {rejectWithValue,dispatch}) => {
+    async ({id}, {rejectWithValue, dispatch}) => {
         try {
             dispatch(deleteCar({id}));
             await carsServices.deleteCar(id);
@@ -25,29 +25,31 @@ export const deleteCarById = createAsyncThunk(
 export const createCar = createAsyncThunk(
     'carSlice/createCar',
     async ({data}, {dispatch}) => {
-    try {
-        const newCar = await carsServices.createCar(data);
-        dispatch(addCar({data: newCar}));
-    } catch (e) {
-        console.log(e.message);
-    }
-});
+        try {
+            const newCar = await carsServices.createCar(data);
+            dispatch(addCar({data: newCar}));
+        } catch (e) {
+            console.log(e.message);
+        }
+    });
 
-// export const updateCar = createAsyncThunk(
-//     'carSlice/updateCar',
-//     async ({data}, {dispatch}) => {
-//         try {
-//             const newCar = await carsServices.updateCar(data);
-//             dispatch(addCar({data: newCar}));
-//         } catch (e) {
-//             console.log(e.message);
-//         }
-//     });
+export const updateCar = createAsyncThunk(
+    'carSlice/updateCar',
+    async ({car}, {dispatch}) => {
+        try {
+            console.log(car);
+            // const newCar = await carsServices.updateCar(car);
+            // dispatch(addCar({data: newCar}));
+        } catch (e) {
+            console.log(e.message);
+        }
+    });
 
 const carSlice = createSlice({
     name: 'carSlice',
     initialState: {
         cars: [],
+        form: {},
         status: null,
         error: null
     },
@@ -58,7 +60,11 @@ const carSlice = createSlice({
         deleteCar: (state, action) => {
             state.cars = state.cars.filter(car => car.id !== action.payload.id);
         },
-        updateCar : (state, action) => {
+        updateCar: (state, action) => {
+
+        },
+        formSet: (state, action) => {
+            state.form = action.payload.car;
 
         }
     },
@@ -79,7 +85,7 @@ const carSlice = createSlice({
 
 const carReducer = carSlice.reducer;
 
-export const {addCar, deleteCar} = carSlice.actions;
+export const {addCar, deleteCar, formSet} = carSlice.actions;
 
 export default carReducer;
 
