@@ -17,7 +17,6 @@ const Form = () => {
     },[form]);
 
 
-
     const carSubmit = (data) => {
         if (form.model){
             dispatch(updateCar({form, data}))
