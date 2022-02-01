@@ -24,7 +24,7 @@ const Form = () => {
         } else {
             dispatch(createCar({data}));
         }
-        reset()
+        // reset()
     }
 
     return (
