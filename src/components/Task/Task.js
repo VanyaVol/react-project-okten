@@ -13,7 +13,7 @@ const Task = ({todoText, index}) => {
             <input type='checkbox' onClick={() => {
                 dispatch(changeStatusTodo({id, checked}))
             }}/>
-            {checked ? <s>{task}</s> : `${task} `}
+            {checked ? <s>{task} </s> : `${task} `}
         </label>
         <button onClick={() => {
             dispatch(deleteTodo({id}));
