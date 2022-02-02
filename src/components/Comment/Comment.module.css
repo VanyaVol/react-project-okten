@@ -1,0 +1,8 @@
+.comment {
+    width: 280px;
+    background-color: #558848;
+}
+
+.comment > * {
+    margin: 10px;
+}

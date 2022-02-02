@@ -1,0 +1,8 @@
+.post {
+    width: 290px;
+    background-color: #558848;
+}
+
+.post > * {
+    margin: 10px;
+}

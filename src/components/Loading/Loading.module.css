@@ -1,0 +1,19 @@
+.loading {
+    margin: 50px auto;
+    width: max-content;
+}
+
+.cycle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border: 3px dashed black;
+    border-radius: 50%;
+}
+
+.text {
+    color: black;
+    font-size: 25px;
+}

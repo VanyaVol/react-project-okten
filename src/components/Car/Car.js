@@ -1,24 +1,25 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {deleteCarById, formSet, updateCar} from "../../store/car.slice";
+import {deleteCarById, formSet} from "../../store/car.slice";
+import css from './Car.module.css';
 
 const Car = ({car}) => {
     const {id} = car;
     const dispatch = useDispatch();
 
     return (
-        <div style={{border: '1px solid black', width: '100px', marginBottom: '10px'}}>
+        <div className={css.car}>
             <div>
-                {car.model}
+                Model: {car.model}
             </div>
             <div>
-                {car.year}
+                Year: {car.year}
             </div>
             <div>
-                {car.price}
+                Price: {car.price}
             </div>
-            <button onClick={()=>{dispatch(deleteCarById({id}))}}>Delete...</button>
-            <button onClick={()=>{dispatch(formSet({car}))}}>Update...</button>
+            <button className={css.btn} onClick={()=>{dispatch(deleteCarById({id}))}}>Delete</button>
+            <button className={css.btn} onClick={()=>{dispatch(formSet({car}))}}>Update</button>
         </div>
     );
 };

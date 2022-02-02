@@ -1,0 +1,26 @@
+.car {
+    width: 290px;
+    background-color: #558848;
+}
+
+.car > * {
+    margin: 5px 10px;
+}
+
+.car > div {
+    font-size: 18px;
+}
+
+.btn {
+    height: 30px;
+    width: 100px;
+    background-color: #fff;
+    border: 1px solid #888888;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: #558848;
+    border: 1px solid white;
+}

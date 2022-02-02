@@ -1,21 +1,31 @@
+.headerBlock {
+    display: flex;
+    justify-content: center;
+    background-color: #35592b;
+    height: 50px;
+}
+
 .header {
+    margin: 0 auto;
+    width: 1350px;
     padding-left: 50px;
     display: flex;
     gap: 30px;
     align-items: center;
-    height: 50px;
-    background-color: cadetblue;
 }
 
 .header > a {
     color: white;
     font-size: 20px;
+    text-transform: uppercase;
 }
 
 .header > a:hover {
     color: gray;
 }
 
+
+
 .header > a[class='active'] {
-    color: red;
+    color: #8a8a8a;
 }

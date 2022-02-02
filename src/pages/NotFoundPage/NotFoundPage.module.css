@@ -1,0 +1,19 @@
+.notFound {
+    width: max-content;
+    margin: 50px auto;
+}
+
+.cycle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    border: 5px solid #000000;
+    border-radius: 50%;
+}
+
+.text {
+    font-size: 25px;
+
+}

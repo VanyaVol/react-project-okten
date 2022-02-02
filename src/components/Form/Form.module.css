@@ -1,0 +1,24 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.form {
+    margin: 20px auto;
+}
+
+.btn {
+    margin-top: 5px;
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transition: 0.2s;
+    background-color: #6eab5e;
+}

@@ -37,7 +37,6 @@ export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
     async ({form, data}, {dispatch}) => {
         try {
-            console.log(form)
             const updCar = await carsServices.updateCar(form.id, data);
             dispatch(updateCarById({updCar}));
         } catch (e) {

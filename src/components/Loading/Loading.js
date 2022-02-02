@@ -1,17 +1,17 @@
 import React from 'react';
+import css from './Loading.module.css';
 
-import css from './NotFoundPage.module.css';
 
-const NotFoundPage = () => {
+const Loading = () => {
     return (
-        <div className={css.notFound}>
+        <div className={css.loading}>
             <div className={css.cycle}>
                 <div className={css.text}>
-                    NotFoundPage
+                    Loading...
                 </div>
             </div>
         </div>
     );
 };
 
-export {NotFoundPage};
+export {Loading};
