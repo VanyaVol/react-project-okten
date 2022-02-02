@@ -1,18 +1,17 @@
 import React, {useEffect} from 'react';
-import {useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
-import {createCar, formSet, updateCar} from "../../store/car.slice";
-import {joiResolver} from "@hookform/resolvers/joi";
-import {carValidator} from "../../validators/car.validator";
+import {useForm} from 'react-hook-form';
+import {useDispatch, useSelector} from 'react-redux';
+import {joiResolver} from '@hookform/resolvers/joi';
+
 import css from './Form.module.css';
-import appCss from '../../App.module.css';
+import {createCar, formSet, updateCar} from '../../store/car.slice';
+import {carValidator} from '../../validators/car.validator';
 
 const Form = () => {
-    const dispatch = useDispatch();
-
     const {register, handleSubmit, reset, setValue, formState: {errors}} = useForm({
         resolver: joiResolver(carValidator), mode: 'onTouched'
     });
+    const dispatch = useDispatch();
 
     const {form} = useSelector(state => state['carReducer']);
 
@@ -24,12 +23,12 @@ const Form = () => {
 
 
     const carSubmit = (data) => {
-        if (form.model) {
+        if (form?.model) {
             dispatch(updateCar({form, data}))
         } else {
             dispatch(createCar({data}));
         }
-        console.log(form);
+        dispatch(formSet({data}))
         reset()
     }
 
@@ -38,10 +37,10 @@ const Form = () => {
             <label className={css.label}>Model: <input {...register('model')} type="text"/></label>
             {errors.model && <div>{errors.model.message}</div>}
             <label className={css.label}>Year: <input {...register('year')} type="text"/></label>
-            {errors.year && <div>{errors.model.message}</div>}
+            {errors.year && <div>{errors.year.message}</div>}
             <label className={css.label}>Price: <input {...register('price')} type="text"/></label>
-            {errors.price && <div>{errors.model.message}</div>}
-            <button className={css.btn}>{!!form.model ? 'Update' : 'Create...'}</button>
+            {errors.price && <div>{errors.price.message}</div>}
+            <button className={css.btn}>{!!form?.model ? 'Update' : 'Create...'}</button>
         </form>
     </div>);
 };

@@ -1,15 +1,17 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
 
-import {Header} from "../Header/Header";
+import appCss from '../../App.module.css';
+
+import {Header} from '../Header/Header';
 
 const Layout = () => {
-    return (
-        <div>
-            <Header/>
+    return (<div>
+        <Header/>
+        <div className={appCss.wrap}>
             <Outlet/>
         </div>
-    );
+    </div>);
 };
 
 export {Layout};

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 import css from './HomePage.module.css';
-import appCss from '../../App.module.css';
 
 const HomePage = () => {
     return (
-        <div className={`${css.homePage} ${appCss.wrap}`}>
+        <div className={`${css.homePage}`}>
             <div className={css.block}>
                 <Link to={'cars'}>Cars</Link>
             </div>

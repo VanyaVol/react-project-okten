@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {getAllUsers} from "../../store/user.slice";
-import {User} from "../User/User";
-import {Loading} from "../Loading/Loading";
+import {useDispatch, useSelector} from 'react-redux';
+
 import css from './Users.module.css';
+import {getAllUsers} from '../../store/user.slice';
+import {User} from '../User/User';
 
 const Users = () => {
     const dispatch = useDispatch();
@@ -13,11 +13,9 @@ const Users = () => {
         dispatch(getAllUsers());
     }, []);
 
-    return (
-        <div className={css.users}>
-            {users.map(itemUser => <User key={itemUser.id} user={itemUser}/>)}
-        </div>
-    );
+    return (<div className={css.users}>
+        {users.map(itemUser => <User key={itemUser.id} user={itemUser}/>)}
+    </div>);
 };
 
 export {Users};
